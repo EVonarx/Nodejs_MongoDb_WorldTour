@@ -1,0 +1,12 @@
+.gauche{
+	height: 50px;
+	width:50%;
+	text-align:left;
+}
+ 
+.droite{
+	height: 50px;
+	width:50%;
+	text-align:right;
+	background-color: powderblue;
+}

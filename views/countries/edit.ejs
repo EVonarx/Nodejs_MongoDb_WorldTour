@@ -1,0 +1,38 @@
+<%- include('../layout_header.ejs') -%>
+
+<body>
+    <div class="container">
+        <h1> <a href="/countries">Home - World tour</a></h1> <!-- a link back to the homepage-->
+        <h2>Edit a country</h2>
+        <hr>
+<!-- enctype to manage the uploaded files -->
+        <form method="POST" action="<%= endpoint %>" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="name">Country name</label>
+                <input type="text" name="name" id="name" class="form-control" value="<%= displayCountry.name %>">
+            </div>
+            <div class="form-group">
+                <label for="number">Number</label>
+                <input type="number" name="number" id="number" class="form-control"
+                    value="<%= displayCountry.number %>">
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea type="text" name="description" id="description"
+                    class="form-control"><%= displayCountry.description %></textarea>
+            </div>
+            <div class="form-group">
+                <label for="file">Picture</label> <br />
+                <input type="file" name="file" id="file" value="<%= displayCountry.picture %>">
+            </div>
+
+            <input type="submit" class="btn btn-primary" value="save" />
+            <a href="/countries" class="btn btn-primary">Cancel</a>
+        </form>
+
+        <hr>
+        <%- include('../layout_copyright.ejs') -%>
+    </div>
+</body>
+
+</html>

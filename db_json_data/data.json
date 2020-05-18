@@ -1,0 +1,71 @@
+{
+    "Countries": [
+        {
+            "name": "Germany",
+            "number": 1,
+            "description": "Germany is a country in Central and Western Europe. Covering an area of 357,022 square kilometres, it lies between the Baltic and North seas to the north, and the Alps to the south. It borders Denmark to the north, Poland and the Czech Republic to the east, Austria and Switzerland to the south, and France, Luxembourg, Belgium, and the Netherlands to the west.",
+            "picture": "",
+            "places": [
+                {
+                    "name": "Munich",
+                    "texts" : [],
+                    "pictures" : []
+                }
+            ]
+        },
+        {
+            "name": "USA",
+            "number": 2,
+            "description": "is a country consisting of 50 states, a federal district, five major self-governing territories, and various possessions. At 9.8 million square kilometres, it is the world's third- or fourth-largest country by total area.[c] Most of the country is located in central North America between Canada and Mexico. With an estimated population of over 328 million, the U.S. is the third most populous country in the world (after China and India). The capital is Washington, D.C., and the most populous city is New York City. ",
+            "picture": "",
+            "places": [
+                {
+                    "name": "New-York",
+                    "texts" : [],
+                    "pictures" : []
+                },
+                {
+                    "name": "Monument-Valley",
+                    "texts" : [],
+                    "pictures" : []
+                }
+            ]
+        },
+        {
+            "name": "Bolivia",
+            "number": 3,
+            "description": "Bolivia is a landlocked country located in western-central South America. The constitutional capital is Sucre, while the seat of government and executive capital is La Paz. The largest city and principal industrial center is Santa Cruz de la Sierra, located on the Llanos Orientales (tropical lowlands), a mostly flat region in the east of the country.",
+            "picture": "",
+            "places": [
+                {
+                    "name": "Sucre",
+                    "texts" : [],
+                    "pictures" : []
+                },
+                {
+                    "name": "La Paz",
+                    "texts" : [],
+                    "pictures" : []
+                }
+            ]
+        },
+        {
+            "name": "Myanmar",
+            "number": 4,
+            "description": "Myanmar or Burma is a country in Southeast Asia. Myanmar is bordered by Bangladesh and India to its northwest, China to its northeast, Laos and Thailand to its east and southeast, and the Andaman Sea and the Bay of Bengal to its south and southwest. With a size of 676,578 square kilometres (261,228 square miles), Myanmar is the largest of the Mainland Southeast Asian states by area. As of 2017, the population is about 54 million.[4] Its capital city is Naypyidaw, and its largest city is Yangon (Rangoon).",
+            "picture": "",
+            "places": [
+                {
+                    "name": "Yangon",
+                    "texts" : [],
+                    "pictures" : []
+                },
+                {
+                    "name": "Bagan",
+                    "texts" : [],
+                    "pictures" : []
+                }
+            ]
+        }
+    ]
+}

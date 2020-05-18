@@ -1,0 +1,4 @@
+{"_id":{"$oid":"5ebf9ad9ded243150047e779"},"name":"Munich","number":{"$numberInt":"2"},"texts":"Munich is the capital and most populous city of Bavaria, the second most populous German federal state.","pictures":"munich.jpg"}
+{"_id":{"$oid":"5ec217c813b6c00790fbb996"},"name":"Stuttgart","number":{"$numberInt":"1"},"texts":"Stuttgart is the capital and largest city of the German state of Baden-Württemberg. Stuttgart is located on the Neckar river in a fertile valley known locally as the \"Stuttgart Cauldron\".","pictures":"a7e85a4189413f926aab7119748fc53f","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5ec24404187e9b1fa054c1db"},"name":"Groland 1","number":{"$numberInt":"1"},"texts":"Yeahhhh 1","pictures":"3811b260dbe9ec75e326b5cbd7ebeb53","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5ec24417187e9b1fa054c1df"},"name":"Groland 2","number":{"$numberInt":"2"},"texts":"Yeahhh 2","__v":{"$numberInt":"0"}}

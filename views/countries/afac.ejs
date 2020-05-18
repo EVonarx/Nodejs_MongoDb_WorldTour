@@ -1,0 +1,39 @@
+<% for(var j=0; j < displayCountries[i].cities[j].length; j++) { %>
+    Cities visited : <%= displayCountries[i].cities[j].city %>
+<% } %>
+
+<br />
+        Number of cities visited : <%= displayCountries[i].cities %>
+
+
+
+        CastError: Cast to ObjectId failed for value "{ city: 'Monument-Valley' }" at path "_id" for model "country"
+
+        Number of places : <%= displayCountry.places.length %>
+
+        <% if (places.length > 0)  { %>
+            checked 
+        <% } %>
+
+
+        ----------------
+
+        <div class="form-group">
+            <% for(var i=0; i < places.length; i++) { %>
+            <!-- <div class="form-group"> -->
+                <% var utiltemp="" %>
+                <% if (places.length > 0)  { %>
+                    <% utiltemp = "checked" %> 
+                <% } %>
+            <label>
+                <input type="checkbox" name="places[]" value="<%= places[i].name %>"> 
+                <%= utiltemp %>
+
+                <%= places[i].name %>
+                 </label>
+                <!--  </div> -->
+                <% } %> <!-- endfor -->
+        </div>
+
+       
+          

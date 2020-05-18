@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2> Countries </h2>
+{{displayCountries.name}} 
+<br/>
+{{displayCountries.description}} 
+
+{% for p in displayCountries %}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            {{p.name}}
+        </div>
+        <div class="panel-body">
+            {{p.description}}
+        </div>
+    </div>
+{% endfor %}
+
+{% endblock %}

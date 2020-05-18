@@ -1,0 +1,32 @@
+<%- include('../layout_header.ejs') -%>
+
+<body>
+    <div class="container">
+        <h1> <a href="."> World tour</a> </h1> <!-- a link back to the homepage-->
+        <div class="row">
+
+            <div class="col-sm-3">
+            </div>
+
+            <div class="col-sm-9">
+                <h2> Country name : <%= displayCountry.name %></h2>
+                <p class="lead">
+                    Description : <%= displayCountry.description %>
+                </p>
+                <h3>Places : </h3>
+                <br />
+                <% for(var i=0; i < displayCountry.places.length; i++) { %>
+                <span style="color: darkgreen" class="label label-default">
+                    <%= displayCountry.places[i].name %>
+                </span>
+                <br />
+                <% } %>
+            </div>
+        </div>
+
+        <%- include('../layout_copyright.ejs') -%>
+
+    </div>
+</body>
+
+</html>
