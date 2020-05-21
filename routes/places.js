@@ -8,19 +8,19 @@ var country = require('./../models/country'); // relative path
 /* BEGIN - HANDLING OF A PLACE LINKED TO COUNTRY */
 // !!! here it is the id of the country !!!
 router.get('/new/:id', (req, res) => {
-    console.log("route get places/new/:id with id = idcountry = "+req.params.id)
+    console.log("route get places/new/:id with id = idcountry = " + req.params.id)
     var newPlace = new place();
-    res.render('places/edit.ejs', { displayPlace: newPlace, endpoint: '/places/placeandcountry/'+req.params.id });
+    res.render('places/edit.ejs', { displayPlace: newPlace, endpoint: '/places/placeandcountry/' + req.params.id });
 });
 
 //POST
 // !!! here it is the id of the country !!!
 router.post('/placeandcountry/:id?', (req, res) => {
-    console.log("route post places/placeandcountry/:id with id = idcountry = "+req.params.id)
+    console.log("route post places/placeandcountry/:id with id = idcountry = " + req.params.id)
     var savePlaceId;
     new Promise((resolve, reject) => {
-            resolve(new place); // new place
-        }
+        resolve(new place); // new place
+    }
     ).then(place1 => {   // once the place is available, it is used to put the params in
         place1.name = req.body.name;
         place1.number = req.body.number;
@@ -29,7 +29,7 @@ router.post('/placeandcountry/:id?', (req, res) => {
         //console.log("place.name=" + place.name + "    place.number=" + place.number + "    place.texts=" + place.texts);
         return place1.save(); // save the place in the DB
     }).then((place2) => { // once the place is saved, save the place id then get the country
-        console.log("A new place has been created with id = "+place2._id);
+        console.log("A new place has been created with id = " + place2._id);
         savePlaceId = place2._id; //save the place id for later
         return country.findById(req.params.id).populate('places');
     }).then(country1 => { // once the place is saved then
@@ -38,12 +38,12 @@ router.post('/placeandcountry/:id?', (req, res) => {
         //console.log("country1.places[0] = " + country1.places[0]);
         //console.log("country1.places[1] = " + country1.places[1]);
         //country1.places[country1.places.length] = { "_id": temp};
-       
+
         countryToUpdate = new country();
         countryToUpdate = country1;
-        countryToUpdate.places.push({ "_id": savePlaceId});
+        countryToUpdate.places.push({ "_id": savePlaceId });
 
-        return countryToUpdate.save(); 
+        return countryToUpdate.save();
     }).then(country2 => {
         //console.log("country2 = " + country2);
         res.redirect('/countries/' + country2._id);  // once the place and the country are saved, we make a redirect to "/countries"
@@ -77,7 +77,7 @@ router.get('/:id', (req, res) => {
 //=> localhost:3000/places/edit/34344555667
 router.get('/edit/:id', (req, res) => {
     place.findById(req.params.id).then(place => {
-        res.render('places/edit.ejs', { displayPlace: place, endpoint: '/places/'+ req.params.id})
+        res.render('places/edit.ejs', { displayPlace: place, endpoint: '/places/' + req.params.id })
     }, err => res.send(err));
 });
 

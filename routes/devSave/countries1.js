@@ -21,44 +21,11 @@ router.get('/', (req, res) => {
 */
 
 router.get('/', (req, res) => {
-   
-    // method 1 => OK
     country.find({}).sort({ 'number': 1 }).then(countries => {
-        //console.log("countries"+countries);
         res.render('countries/countries.ejs', { displayCountries: countries })
     })
 
-  
-    //method 2 : with async and await => OK
-    /*
-   getroutecountries().then ((result100)=>
-    res.render('countries/countries.ejs', { displayCountries: result100 })
-   );
-   */
-
-    //method 3 : with promise => OK
-    /*
-    new Promise((resolve, reject) => {
-        var result1 = getroutecountries();
-        resolve(result1);
-    }).then(result200 => {
-        //console.log("result:" + result);
-        //console.log("getroutecountries:" + getroutecountries);
-        res.render('countries/countries.ejs', { displayCountries: result200 })
-
-    });
-   */
-  
 });
-
-
-async function getroutecountries() {
-    var getroutecountries = await country.find({}).sort({ 'number': 1 });
-    //console.log("getroutecountries:" + getroutecountries);
-    return getroutecountries;
-};
-
-
 
 //Be careful : the order of the routes are important !!!!
 router.get('/new', (req, res) => {
@@ -103,9 +70,9 @@ router.get('/delete/:id', (req, res) => {
         //console.log("number of places of this country=" + country1.places.length);
         //console.log("places for this country=" + country1.places);
         //return place.findById(country1.places[0]._id);
-
+        
         findAndDeletePlaces(country1);
-
+       
         /*
     }, err => res.send("the place to delete couldn't be found..."))
         .then((place1) => {
@@ -126,11 +93,11 @@ router.get('/delete/:id', (req, res) => {
 
 
 function findplace(id) {
-
+    
     return new Promise((resolve) => {
         place.findById(id).then((place1) => {
             //console.log("this is a place for this country=" + place1)
-            resolve(place1);
+            resolve (place1);
         });
 
     });
@@ -139,12 +106,12 @@ function findplace(id) {
 function deleteplace(place1) {
     return new Promise((resolve) => {
         //console.log("this is a place to delete = " + place1);
-        resolve(place1.delete());
+        resolve (place1.delete());
     });
 }
 
 async function findAndDeletePlaces(country1) {
-
+   
     for (var i = 0; i < country1.places.length; i++) {
         //console.log("number of places of this country=" + country1.places.length);
         await findplace(country1.places[i]._id).then((place1) => {
@@ -155,7 +122,7 @@ async function findAndDeletePlaces(country1) {
 }
 
 async function deleteThisPlace(place1) {
-
+    
     await deleteplace(place1).then(() => {
     });
 }
