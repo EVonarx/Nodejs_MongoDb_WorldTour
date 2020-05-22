@@ -4,25 +4,27 @@ var ejs = require('ejs'); // module for template engine
 var bodyParser = require('body-parser'); // module to parse the html response and transform the HTML inputs into a javascript object
 var multer = require('multer'); // module to manage the upload of the images
 
+
+var url = process.env.MONGODB_URL;
+
 /*
 const {MongoClient} = require('mongodb');
-const uri = "mongodb+srv://evonarx:azerty123456@cluster0-0rax1.mongodb.net/worldtour?authSource=admin&replicaSet=Cluster0-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true&useNewUrlParser=true&useUnifiedTopology=true";
-const client = new MongoClient(uri);
+const client = new MongoClient(url);
 */
+
+//console.log('process.env.MONGODB_URL = '+ process.env.MONGODB_URL);
 
 var upload = multer({
     dest : __dirname + '/img'
 })
 
 // connection to local db
-/*
-mongoose.connect('mongodb://localhost/worldtour', {
+
+mongoose.connect(url, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
 });
-*/
-// connection to remote db
-mongoose.connect('mongodb+srv://evonarx:azerty123456@cluster0-0rax1.mongodb.net/worldtour?retryWrites=true&w=majority');
+
 
 /* once the models have been defined, add... */
 require('./models/place');
